@@ -17,7 +17,7 @@ public class Main {
             for(int j = 1; j <= n; j++){
                 char ch = str.charAt(j-1);
 
-                if(i == j)continue;//나와 나는 친구가 아니다
+                //if(i == j)continue;//나와 나는 친구가 아니다
                 arr[i][j] = ch == 'Y' ? 1 : max;
             }
         }
