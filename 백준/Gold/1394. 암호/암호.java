@@ -73,13 +73,6 @@ public class Main {
             return this.idx - c.idx; //두 객체의 str이 동일하면 idx를 비교한다.
         }
 
-        @Override
-        public boolean equals(Object object) {//두 Code 객체의 str이 같은지 비교한다.
-            Code code = (Code)object; //Code형으로 다운캐스팅
-            if(this.str.equals(code.str)) {
-                return true;
-            }
-            return false;
-        }
+       
     }
 }
