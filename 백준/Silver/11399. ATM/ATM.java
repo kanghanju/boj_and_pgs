@@ -10,10 +10,9 @@ public class Main {
         StringTokenizer st;
 
         int sum = 0;
-        int answer = 0;
+        int prev = 0;
         int n = Integer.parseInt(br.readLine());
         List<Integer> p = new ArrayList<>();
-        List<Integer> ans = new ArrayList<>();
 
         st = new StringTokenizer(br.readLine());
         for(int i = 0; i < n; i++) {
@@ -24,11 +23,11 @@ public class Main {
         Collections.sort(p);
 
         for(int i = 0; i < n; i++) {
-            sum += p.get(i);
-            ans.add(sum);
-            answer += ans.get(i);
+            sum += p.get(i) + prev;
+            prev += p.get(i);
         }
 
-        System.out.println(answer);
+        System.out.println(sum);
+
     }
 }
