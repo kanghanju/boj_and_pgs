@@ -1,15 +1,23 @@
 class Solution {
     public String solution(String s) {
-        String[] words = s.split("");
-        String answer = "";
-        int count = 1;
-
-        for(int i = 0; i < words.length; i++) {
-            count = (words[i].contains(" ")) ? 1 : count + 1;
-            if(count % 2 == 0) answer += words[i].toUpperCase();
-            else answer += words[i].toLowerCase();
+        StringBuilder sb = new StringBuilder();
+        boolean toUpper = true;
+        
+        for(char c : s.toCharArray()) {
+            if(!Character.isAlphabetic(c)) {
+                sb.append(" ");
+                toUpper = true;
+            } else {
+                if(toUpper) {
+                    sb.append(Character.toUpperCase(c));
+                } else {
+                    sb.append(Character.toLowerCase(c));
+                }
+                
+                toUpper = !toUpper;
+            }
         }
-
-        return answer;
+        
+        return sb.toString();
     }
 }
