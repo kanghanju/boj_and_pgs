@@ -6,14 +6,13 @@ class Solution {
             return false;
         }
 
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
-                continue;
-            } else {
+        for (char c : s.toCharArray()){
+            if(!Character.isDigit(c)) {
                 return false;
             }
         }
-
+        
+        //return s.matches("[0-9]{4}|[0-9]{6}"); 
         return true;
     }
 }
