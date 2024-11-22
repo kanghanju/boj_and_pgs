@@ -5,21 +5,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        boolean turn = true;
+        boolean[] score = new boolean[1001];
+        ;
 
-        while (n > 0) {
-            if (n >= 3) {
-                n -= 3;
-            } else {
-                n -= 1;
+        score[1] = true; //sk win
+        score[2] = false; //cy win
+        score[3] = true;
+
+        if (n > 3) {
+            if (n % 2 == 1) {
+                score[n] = true;
             }
-            turn = !turn;
         }
 
-        if (turn) {
-            System.out.println("CY");
-        } else {
+        if (score[n]) {
             System.out.println("SK");
+        } else {
+            System.out.println("CY");
         }
     }
 }
